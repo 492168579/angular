@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>介绍依赖注入</title>
+</head>
+<body>
+<script>
+    var A  = function () {
+        this.getName =function () {
+            return "zhangsan" ;
+        }
+    }
+    var B  = function (aObj) {
+        //b 依赖于a
+        console.log(aObj.getName());
+
+    }
+    var a = new A();
+    //a注入b
+    var b = new B(a);
+    //两个方法
+    //1.将a传入b
+    //2.a是全局变量
+
+
+</script>
+
+</body>
+</html>
