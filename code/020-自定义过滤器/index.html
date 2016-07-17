@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数据绑定</title>
+</head>
+<body >
+    <div  ng-app="myApp">
+        <div ng-controller="myCtrl">
+            <ul >
+                <li ng-repeat="item in data |filterCity">{{item.name}} {{item.age}} {{item.city}}</li>
+            </ul>
+        </div>
+    </div>
+<script src="../../vendor/js/angular.js"></script>
+<script src="index.js"></script>
+</body>
+</html>

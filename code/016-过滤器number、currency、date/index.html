@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数据绑定</title>
+</head>
+<body ng-app="myApp">
+    <div ng-controller="firstController" >
+     格式化数字{{123457890|number}}<br>
+     格式化数字保留三位有效数字{{123457890.456789|number:3}}<br>
+     格式化式钱{{123457890.456789|currency}}<br>
+     格式化式钱人民币{{123457890.456789|currency:'rmb'}}<br>
+     格式化日期{{today}}<br/>
+     格式化日期{{today|date:'yyyy-MM-dd HH:mm:ss'}}<br/>
+    </div>
+
+<script src="../../vendor/js/angular.js"></script>
+<script src="index.js"></script>
+</body>
+</html>

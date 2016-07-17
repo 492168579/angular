@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数据绑定</title>
+</head>
+<body ng-app="myApp">
+    <div ng-controller="firstController" >
+        <p>{{[1,2,3,4,5,6,7,8]|limitTo:5}}</p>
+        <p>{{[1,2,3,4,5,6,7,8]|limitTo:-5}}</p>
+        <p>小写:{{name|lowercase}}</p>
+        <p>小写:{{name|uppercase}}</p>
+        <p>filter{{city|filter:"上海"}}</p>
+        <p>filter{{city|filter:{py:"g"} }}</p>
+        <p>filter checkName{{city|filter:checkName}}</p>
+    </div>
+
+<script src="../../vendor/js/angular.js"></script>
+<script src="index.js"></script>
+</body>
+</html>

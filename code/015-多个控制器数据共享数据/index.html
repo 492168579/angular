@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数据绑定</title>
+</head>
+<body ng-app="myApp">
+    <div ng-controller="firstController" >
+       first name:<input type="text"   ng-model="data.name" value="{{data.name}}"/><br>
+       name:{{data.name}}
+        first message:<input type="text"   ng-model="Data.message" value="{{Data.message}"/><br>
+        name:{{Data.message}}
+    </div>
+    <div ng-controller="secondController" >
+       second name:<input type="text" ng-model="data.name" value="{{Data.message}}"/><br>
+        name:{{data.name}}
+        second message:<input type="text" ng-model="Data.message" value="{{Data.message}}"/><br>
+        name:{{Data.message}}
+    </div>
+<script src="../../vendor/js/angular.js"></script>
+<script src="index.js"></script>
+</body>
+</html>

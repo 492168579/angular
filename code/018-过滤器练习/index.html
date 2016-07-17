@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>过滤器练习</title>
+    <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <style>
+        .orderColor{
+            color: red;
+        }
+    </style>
+</head>
+<body >
+    <div  ng-app="myApp" class="container" ng-controller="productController">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <form class="navbar-form navbar-left" role="search">
+                    <div class="form-group">
+                        <input type="text" class="form-control" ng-model="search" placeholder="Search">
+                    </div>
+                </form>
+            </div>
+        </nav>
+        <table class="table">
+            <thead>
+               <tr>
+                   <th  ng-class="{dropup:order ===''}"  ng-click="changeOrder('id')">
+                       产品编号
+                       <span class="caret"   ng-class="{orderColor:orderType ==='id'}" ></span>
+                   </th>
+                   <th ng-class="{dropup:order ===''}" ng-click="changeOrder('name')">
+                       产品名称
+                       <span class="caret" ng-class="{orderColor:orderType ==='name'}" ></span>
+                   </th>
+                   <th ng-class="{dropup:order ===''}" ng-click="changeOrder('price')">
+                       产品价钱
+                       <span class="caret" ng-class="{orderColor:orderType ==='price'}" ></span>
+                   </th>
+               </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="product in products|filter:{id:search}|orderBy:order + orderType">
+                    <td>{{product.id}}</td>
+                    <td>{{product.name}}</td>
+                    <td>{{product.price|currency:'(RMB)'}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+<script src="../../vendor/js/angular.js"></script>
+<script src="../../vendor/js/jquery-3.1.0.min.js"></script>
+<script src="../../vendor/bootstrap/js/bootstrap.js"></script>
+<script src="index.js"></script>
+</body>
+</html>

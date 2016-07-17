@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>$provider里的factory和service方法</title>
+</head>
+<body >
+    <div  ng-app="myApp">
+        <div ng-controller="myCtrl">
+            <input type="text" ng-model="firstName" />
+            {{firstName}}
+            <!--第一个页面尽量使用ng-bind来加载表达式 -->
+            <di ng-bind="firstName">
+
+            </di>
+        </div>
+    </div>
+<script src="../../vendor/js/angular.js"></script>
+<script src="index.js"></script>
+</body>
+</html>
